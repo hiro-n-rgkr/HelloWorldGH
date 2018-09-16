@@ -21,11 +21,11 @@ namespace HelloWorldGH
     public class HelloWorldGHComponent : GH_Component
     {
         public HelloWorldGHComponent() 
-            : base("Hello World!", 
-                   "Hello World!", 
-                   "HeloWorld component showing winforms override",
-                   "rgkr", 
-                   "HelloWorld"
+            : base("Hello World!",                                  // 名称
+                   "HW",                                            // 略称
+                   "HeloWorld component showing winforms override", // コンポーネントの説明
+                   "rgkr",                                          // カテゴリ(タブの表示名)
+                   "HelloWorld"                                     // サブカテゴリ(タブ内の表示名)
                   )
         {
         }
@@ -103,9 +103,11 @@ namespace HelloWorldGH
         {
             base.Layout();
 
+            // コンポーネントのサイズを取得し、ボタン分の長さをプラス(+44)する
             Rectangle rec0 = GH_Convert.ToRectangle(Bounds);
             rec0.Height += 44;
 
+            // 22の高さの長方形を配置する
             Rectangle rec1 = rec0;
             rec1.Y = rec1.Bottom - 44;
             rec1.Height = 22;
